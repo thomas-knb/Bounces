@@ -1,5 +1,6 @@
 #include "wall.h"
 
+
 void Wall::computeSpeed(Shape& shape)
 {
 	static const float dampingNorm = 0.85;

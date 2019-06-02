@@ -10,11 +10,14 @@
 
 void Game::initGame()
 {
-	_shapes = new Shape*[_nbShapes];
-	if (_nbShapes > 0)
-		_shapes[0] = new Ball(150,250,15,0,0);
-	if (_nbShapes > 1)
-		_shapes[1] = new Cube(350,250,15,0,0);
+//	_shapes = new Shape*[_nbShapes];
+//	if (_nbShapes > 0)
+//		_shapes[0] = new Ball(150, 250, 15, 0, 0);
+//	if (_nbShapes > 1)
+//		_shapes[1] = new Cube(350, 250, 15, 0, 0);
+
+	Cube cube1(350, 250, 15, 0, 0);
+	_simu+=cube1;
 
 	_walls[0] = Wall(0, 0, 500, 10);   // plafond
 	_walls[1] = Wall(0, 490, 500, 10); // sol
@@ -53,15 +56,15 @@ bool Game::play()
 		if(!_play)
 			_screen.text(100, 250, "Press Space to start",0xFFFFFFFF);
 		else {
-			for (i=0; i<_nbShapes; i++)
-				_shapes[i]->update(move);
+			for (i=0; i<_simu.getNbShapes(); i++)
+				_simu.getShapes()[i]->update(move);
 			for (j = 0; j<4; j++) {
 				_walls[j].draw(_screen);
-				for (i=0; i<_nbShapes; i++)
-					_walls[j].computeSpeed(*_shapes[i]);
+				for (i=0; i<_simu.getNbShapes(); i++)
+					_walls[j].computeSpeed(*_simu.getShapes()[i]);
 			}
-			for (i=0; i<_nbShapes; i++)
-				_shapes[i]->draw(_screen);
+			for (i=0; i<_simu.getNbShapes(); i++)
+				_simu.getShapes()[i]->draw(_screen);
 		}      
 	}
 	return 0;

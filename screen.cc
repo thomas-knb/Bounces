@@ -2,6 +2,7 @@
 #include <cassert>
 #include <math.h>   
 
+
 /* Positions origin are upper left corner */
 
 Screen::Screen():_w(500),_h(500)

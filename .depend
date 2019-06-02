@@ -1,0 +1,6 @@
+screen.o: screen.cc screen.h
+game.o: game.cc game.h screen.h shape.h ball.h cube.h wall.h simu.h
+main.o: main.cc game.h screen.h shape.h ball.h cube.h wall.h simu.h
+shape.o: shape.cc shape.h screen.h
+simu.o: simu.cc simu.h shape.h screen.h ball.h cube.h
+wall.o: wall.cc wall.h screen.h shape.h
