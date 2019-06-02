@@ -18,6 +18,14 @@ Simu::Simu(int type, float x, float y, float radius, float vx, float vy)
 		_shapes[0] = new Cube(x, y, radius, vx, vy);
 }
 
+
+Simu::~Simu()
+{
+	for (uint16_t i=0; i<_nbShapes; i++)
+		delete _shapes[i];
+	delete[] _shapes;
+}
+
 Simu& Simu::operator+=(const Shape& shape)
 {
 	if (shape.getType() == 1)

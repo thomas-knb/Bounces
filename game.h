@@ -13,7 +13,6 @@ class Game
 {
 	public:
 		Game():_screen(500, 500), _play(false){};
-//		~Game();
 		bool play();
 	private:
 		Screen _screen;

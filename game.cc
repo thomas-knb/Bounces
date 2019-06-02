@@ -1,21 +1,8 @@
 #include "game.h"
 
 
-//Game::~Game()
-//{
-//	for (uint16_t i=0; i<_nbShapes; i++)
-//		delete _shapes[i];
-//	delete[] _shapes;
-//}
-
 void Game::initGame()
 {
-//	_shapes = new Shape*[_nbShapes];
-//	if (_nbShapes > 0)
-//		_shapes[0] = new Ball(150, 250, 15, 0, 0);
-//	if (_nbShapes > 1)
-//		_shapes[1] = new Cube(350, 250, 15, 0, 0);
-
 	Cube cube1(350, 250, 15, 0, 0);
 	_simu+=cube1;
 

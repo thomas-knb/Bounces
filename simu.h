@@ -11,6 +11,7 @@ class Simu
 	public:
 		Simu();
 		Simu(int type, float x, float y, float radius, float vx, float vy); // type = 1 -> Ball, type = 2 -> Cube
+		~Simu();
 		Simu& operator+=(const Shape& shape);
 		int getNbShapes() const {return _nbShapes;}
 		Shape ** getShapes() const {return _shapes;}

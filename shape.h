@@ -9,6 +9,7 @@ class Shape
 	public:
 		Shape():_x(150), _y(250), _radius(15), _vx(0), _vy(0), _type(1){};
 		Shape(float x, float y, float radius, float vx, float vy, int type):_x(x), _y(y), _radius(radius), _vx(vx), _vy(vy), _type(type){};
+		virtual ~Shape(){};
 		virtual void draw(Screen& s){s.disc(_x, _y, _radius, 0xFFFFFFFF);}
 		void setSpeed(float vx, float vy){ _vx = vx; _vy = vy;}
 		float getSpeedX() const {return _vx;}
